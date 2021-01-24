@@ -1,11 +1,73 @@
 @import "src/theme/mixins.scss";
 
 header {
-    position: fixed;
-    box-shadow: 0px 3px 6px #00000029;
-    top: 0;
-    right: 0;
-    left: 0;
-    background: white;
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: white;
+  z-index: 100;
+  padding: 20px 0;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    width: 50%;
+
+    li {
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    a,
+    button {
+      font-weight: 800;
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    a {
+      color: #0f6c92;
+    }
+
+    button {
+      background: linear-gradient(86.82deg, #1d94bf 0%, #1fa9cf 100%);
+      border-radius: 6.81879px;
+      color: white;
+      border: none;
+      padding: 12px 35px;
+      transition: 0.2s;
+      &:active {
+        background: linear-gradient(86.82deg, #1fa9cf 0%, #1d94bf 100%);
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    ul{
+      width: 70%;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .header{
+      justify-content: center;
+    }
+    ul{
+      display: none;
+    }
+  }
+}
+
+.header-downed {
+  box-shadow: 0px 3px 6px #00000029;
 }
