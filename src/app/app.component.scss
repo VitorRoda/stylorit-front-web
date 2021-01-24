@@ -1,0 +1,10 @@
+@import 'src/theme/mixins.scss';
+
+app-header {
+    height: 90px;
+    display: flex;
+}
+
+body{
+  margin: 0;
+}
