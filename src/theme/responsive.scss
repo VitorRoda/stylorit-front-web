@@ -1,17 +1,17 @@
 .only-web{
-  display: flex;
+  display: flex !important;
 }
 
 .only-mobile{
-  display: none;
+  display: none !important;
 }
 
 @include media-breakpoint-down(md) {
   .only-web{
-    display: none;
+    display: none !important;
   }
 
   .only-mobile{
-    display: flex;
+    display: flex !important;
   }
 }
