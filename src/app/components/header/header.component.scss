@@ -29,17 +29,22 @@ header {
     }
 
     a,
-    button {
+    .btn {
       font-weight: 800;
       font-size: 15px;
       line-height: 20px;
+      cursor: pointer;
     }
 
     a {
       color: #0f6c92;
+
+      &:hover{
+        color: black;
+      }
     }
 
-    button {
+    .btn {
       background: linear-gradient(86.82deg, #1d94bf 0%, #1fa9cf 100%);
       border-radius: 6.81879px;
       color: white;
@@ -48,6 +53,9 @@ header {
       transition: 0.2s;
       &:active {
         background: linear-gradient(86.82deg, #1fa9cf 0%, #1d94bf 100%);
+      }
+      &:hover{
+        color: white;
       }
     }
   }

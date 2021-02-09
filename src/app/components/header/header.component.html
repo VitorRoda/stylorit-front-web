@@ -2,10 +2,10 @@
   <div class="header container">
     <img src="../../../assets/images/logo.svg" alt="">
     <ul>
-      <li><a href="/">Sobre</a></li>
-      <li><a href="/">Como funciona</a></li>
-      <li><a href="/">Serviços</a></li>
-      <li><button>Contato</button></li>
+      <li><a (click)="scroll('home')" >Sobre</a></li>
+      <li><a (click)="scroll('how')">Como funciona</a></li>
+      <li><a (click)="scroll('services')">Serviços</a></li>
+      <li><a (click)="scroll('contact')" class="btn">Contato</a></li>
     </ul>
   </div>
 </header>

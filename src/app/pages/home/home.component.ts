@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public dynamicForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+
+
+    this.dynamicForm = this.formBuilder.group({
+      nome_in: ['', Validators.required],
+      email_in: ['', Validators.required],
+      telefone_in: ['', Validators.required],
+      mesage_in: ['', Validators.required]
+    });
   }
 
+  public onSubmit() {
+    debugger
+    if (this.dynamicForm.invalid) return;
+
+  }
 }

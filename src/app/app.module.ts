@@ -12,6 +12,8 @@ import { FooterComponent } from '../app/components/footer/footer.component'
 import { HomeComponent } from './pages/home/home.component';
 
 
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,9 @@ import { HomeComponent } from './pages/home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

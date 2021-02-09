@@ -7,14 +7,17 @@
       <div class="col-md-5 col-12">
         <h2>Uma nova experiência ao seu negócio</h2>
         <h1>Transforme sua ideia em realidade!</h1>
-        <button>Transformar</button>
+        <button class="only-web">Transformar</button>
       </div>
       <div class="col-md-6 col-12">
         <img src="../../../assets/images/home-img-1.png" alt="">
       </div>
     </div>
-    <div class="bot">
-      <button><i class="fab fa-whatsapp"></i> Fale com a gente!</button>
+    <div class="bot-mobile only-mobile">
+      <button>Transformar</button>
+    </div>
+    <div class="only-web bot">
+      <a target="_blank" href="https://wa.me/5533988919428?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20suas%20anima%C3%A7%C3%B5es%20%3A%29"><i class="fab fa-whatsapp"></i> Fale com a gente!</a>
     </div>
   </div>
 </section>
@@ -23,7 +26,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <div class="img">
+        <div class="img only-web">
           <img src="../../../assets/images/element-bars-sec-2.png" alt="">
         </div>
         <div class="division">
@@ -43,7 +46,8 @@
       </div>
     </div>
   </div>
-  <img class="circle" src="../../../assets/images/circles-sec-2.png" alt="">
+  <img class="circle only-web" src="../../../assets/images/circles-sec-2.png" alt="">
+  <img class="circle only-mobile" src="../../../assets/images/circles-sec-2-mobile.png" alt="">
 </section>
 
 <section id="virtue" class="sec-3">
@@ -142,17 +146,71 @@
 
 <section id="services" class="sec-5">
   <div class="container">
-    <h3>CONHEÇA</h3>
-    <h2>Nossos Serviços</h2>
+    <div class="row">
+
+      <div class="col-12 col-md-6">
+        <h3>CONHEÇA</h3>
+        <h2>Nossos Serviços</h2>
+      </div>
+      <div class="col-12 col-md-4">
+      </div>
+      <div class="col-12 col-md-2">
+        <button>
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <button>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
     <div class="row">
       <div class="col-12 col-md-6">
         <img src="../../../assets/images/img-sec-5.png" alt="">
       </div>
       <div class="col-12 col-md-6">
         <h4>Animação padrão sem personagem</h4>
-        <p>Por fim, desenvolvemos e entregamos para você o produto final: a animação com efeitos sonos, narração ou quaisquer adições que você quiser.</p>
+        <p>Por fim, desenvolvemos e entregamos para você o produto final: a animação com efeitos sonos, narração ou
+          quaisquer adições que você quiser.</p>
       </div>
     </div>
   </div>
   <img class="circle" src="../../../assets/images/Mask Group.png" alt="">
+</section>
+
+<section id="contact" class="sec-6">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <h3>VAMOS CONVERSAR</h3>
+        <h2>Entre em <br> Contato.</h2>
+        <p>
+          Tem alguma dúvida ou quer iniciar um projeto conosco? Entre em contato.
+        </p>
+        <img src="../../../assets/images/bars-sec-4.png" alt="">
+      </div>
+      <div class="col-12 col-md-1">
+
+      </div>
+      <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()" class="col-12 col-md-7">
+        <div class="box">
+          <label for="nome_in">Seu nome</label>
+          <input formControlName="nome_in" name="nome_in" id="nome_in" type="text">
+        </div>
+        <div class="box esquerda">
+          <label for="email_in">Email</label>
+          <input formControlName="email_in" name="email_in" id="email_in" type="email">
+        </div>
+        <div class="box direita">
+          <label for="telefone_in">Telefone/WhatsApp</label>
+          <input formControlName="telefone_in" name="telefone_in" id="telefone_in" type="text">
+        </div>
+        <div class="box">
+          <label for="mesage_in">Sua Mensagem</label>
+          <textarea formControlName="mesage_in" name="mesage_in" placeholder="Explique-nos brevemente o que você quer com seu projeto e entraremos em contato!" name="mesage_in" id="mesage_in" cols="30" rows="10"></textarea>
+        </div>
+
+        <button>ENVIAR MENSAGEM</button>
+      </form>
+    </div>
+  </div>
 </section>
