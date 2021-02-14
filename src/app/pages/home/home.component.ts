@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import Swal from 'sweetalert2'
+import SwiperCore from 'swiper/core';
 
 @Component({
   selector: 'app-home',
@@ -48,6 +49,8 @@ export class HomeComponent implements OnInit {
       `<p>Mensagem: <strong>` + data.mesage_in + `</strong></p>`
 
     console.log(message);
+
+
 
   }
 }
