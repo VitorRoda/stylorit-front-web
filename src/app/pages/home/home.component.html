@@ -241,19 +241,19 @@
       <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()" class="col-12 col-md-7">
         <div class="box">
           <label for="nome_in">Seu nome</label>
-          <input formControlName="nome_in" name="nome_in" id="nome_in" type="text">
+          <input formControlName="nome" name="nome_in" id="nome_in" type="text">
         </div>
         <div class="box esquerda">
           <label for="email_in">Email</label>
-          <input formControlName="email_in" name="email_in" id="email_in" type="email">
+          <input formControlName="email" name="email_in" id="email_in" type="email">
         </div>
         <div class="box direita">
           <label for="telefone_in">Telefone/WhatsApp</label>
-          <input mask="(00) 0 0000-0000" formControlName="telefone_in" name="telefone_in" id="telefone_in" type="text">
+          <input mask="(00) 0 0000-0000" formControlName="telefone" name="telefone_in" id="telefone_in" type="text">
         </div>
         <div class="box">
           <label for="mesage_in">Sua Mensagem</label>
-          <textarea formControlName="mesage_in" name="mesage_in"
+          <textarea formControlName="mesage" name="mesage_in"
             placeholder="Explique-nos brevemente o que você quer com seu projeto e entraremos em contato!"
             name="mesage_in" id="mesage_in" cols="30" rows="10"></textarea>
         </div>

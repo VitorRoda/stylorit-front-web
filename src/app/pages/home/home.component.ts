@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import Swal from 'sweetalert2'
 import SwiperCore from 'swiper/core';
+import { ApiClient } from '../../service/api';
 
 @Component({
   selector: 'app-home',
@@ -11,17 +12,20 @@ import SwiperCore from 'swiper/core';
 export class HomeComponent implements OnInit {
 
   public dynamicForm: FormGroup;
+  private apiClient: ApiClient;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, apiClient: ApiClient) {
+    this.apiClient = apiClient;
+  }
 
   ngOnInit(): void {
 
 
     this.dynamicForm = this.formBuilder.group({
-      nome_in: ['', Validators.required],
-      email_in: ['', Validators.required],
-      telefone_in: ['', Validators.required],
-      mesage_in: ['', Validators.required]
+      nome: ['', Validators.required],
+      email: ['', Validators.required],
+      telefone: ['', Validators.required],
+      mesage: ['', Validators.required]
     });
   }
 
@@ -50,7 +54,19 @@ export class HomeComponent implements OnInit {
 
     console.log(message);
 
+    // fetch('http://localhost:8000/send-email', {
+    //   method: 'POST',
+    //   body: data
+    // })
+    //   .then(function (response) {
+    //     debugger
+    //     return response.blob();
+    //   })
+    //   .then(function (myBlob) {
+    //     debugger
+    //   });
 
+    let res = this.apiClient.postEmail<void>(data);
 
   }
 }
