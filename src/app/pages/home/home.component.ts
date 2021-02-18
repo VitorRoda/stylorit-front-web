@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import Swal from 'sweetalert2'
 import SwiperCore from 'swiper/core';
 import { ApiClient } from '../../service/api';
+import $ from "jquery";
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,7 @@ export class HomeComponent implements OnInit {
       nome: ['', Validators.required],
       email: ['', Validators.required],
       telefone: ['', Validators.required],
-      mesage: ['', Validators.required]
+      mensagem: ['', Validators.required]
     });
   }
 
@@ -47,26 +48,36 @@ export class HomeComponent implements OnInit {
 
   }
   public sendEmail(data) {
-    let message = `<p>Nome: <strong>` + data.nome_in + `</strong></p>` +
-      `<p>Email: <strong>` + data.email_in + `</strong></p>` +
-      `<p>Telefone/WhatsApp: <strong>` + data.telefone_in + `</strong></p>` +
-      `<p>Mensagem: <strong>` + data.mesage_in + `</strong></p>`
-
-    console.log(message);
 
     // fetch('http://localhost:8000/send-email', {
-    //   method: 'POST',
-    //   body: data
-    // })
-    //   .then(function (response) {
-    //     debugger
-    //     return response.blob();
-    //   })
-    //   .then(function (myBlob) {
-    //     debugger
-    //   });
+    //   method: 'post',
+    //   body: data,
+    // 	headers: { "Content-type": "application/json;charset=utf-8" }
+    // }).then(function (response) {
+    //   debugger
+    //   return response.blob();
+    // }).then(function (myBlob) {
+    //   debugger
+    // });
 
-    let res = this.apiClient.postEmail<void>(data);
+    // let res = this.apiClient.postEmail<void>(data);
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost:8000/send-email',
+      data: data,
+      success: function (data) {
+      },
+      error: function (data) {
+      }
+    });
+
+    Swal.fire({
+      title: 'E-mail enviado',
+      text: 'Seu E-mail foi enviado para nossa equipe.',
+      icon: 'success',
+      confirmButtonText: 'OK',
+      confirmButtonColor: '#1FA6CD'
+    })
 
   }
 }

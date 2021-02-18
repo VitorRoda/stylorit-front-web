@@ -44,9 +44,8 @@ export class ApiClient {
     debugger
     try {
       var axiosResponse = await this.axiosClient.request<T>({
-        method: 'post',
+        method: 'POST',
         url: 'http://localhost:8000/send-email',
-        params: options.params,
         data: options.data,
       });
       debugger
