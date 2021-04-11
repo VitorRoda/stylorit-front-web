@@ -13,12 +13,21 @@ import { HomeComponent } from './pages/home/home.component';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 
-import { SwiperModule } from 'swiper/angular';
+//imports
 import { NgxMaskModule, IConfig } from 'ngx-mask'
+
+import { SwiperModule } from 'ngx-swiper-wrapper'
+import { SWIPER_CONFIG } from 'ngx-swiper-wrapper'
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper'
 
 const maskConfig: Partial<IConfig> = {
   dropSpecialCharacters: true
 }
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 'auto'
+};
 
 @NgModule({
   declarations: [
@@ -35,7 +44,9 @@ const maskConfig: Partial<IConfig> = {
     SwiperModule,
     NgxMaskModule.forRoot(maskConfig),
   ],
-  providers: [],
+  providers: [
+    { provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

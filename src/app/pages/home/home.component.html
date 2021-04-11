@@ -153,26 +153,27 @@
         <h3>CONHEÇA</h3>
         <h2>Nossos Serviços</h2>
       </div>
-      <!-- <div class="col-12 col-md-4">
+      <div class="col-12 col-md-4">
       </div>
       <div class="col-12 col-md-2">
-        <button>
+        <button #welcomeNavPrev>
           <i class="fas fa-arrow-left"></i>
         </button>
-        <button>
+        <button #welcomeNavNext>
           <i class="fas fa-arrow-right"></i>
         </button>
-      </div> -->
+      </div>
     </div>
 
+
     <swiper [config]="{ 
-      slidesPerView: 1, 
       navigation: { 
-        nextEl: welcomeNavNext, 
-        prevEl: welcomeNavPrev, 
-        allowTouchMove: false 
-      }}">
-      <ng-template swiperSlide>
+          nextEl: welcomeNavNext, 
+          prevEl: welcomeNavPrev, 
+          allowTouchMove: true 
+      }
+      }">
+      <div class="slide">
         <div class="row">
           <div class="col-12 col-md-6">
             <img src="../../../assets/images/img-sec-5.png" alt="">
@@ -183,8 +184,8 @@
               quaisquer adições que você quiser.</p>
           </div>
         </div>
-      </ng-template>
-      <ng-template swiperSlide>
+      </div>
+      <div class="slide">
         <div class="row">
           <div class="col-12 col-md-6">
             <img src="../../../assets/images/img-sec-5.png" alt="">
@@ -196,8 +197,8 @@
               seu cliente com as interações entre os personagens!</p>
           </div>
         </div>
-      </ng-template>
-      <ng-template swiperSlide>
+      </div>
+      <div class="slide">
         <div class="row">
           <div class="col-12 col-md-6">
             <img src="../../../assets/images/img-sec-5.png" alt="">
@@ -209,8 +210,8 @@
               maneira ainda mais exclusiva!</p>
           </div>
         </div>
-      </ng-template>
-      <ng-template swiperSlide>
+      </div>
+      <div class="slide">
         <div class="row">
           <div class="col-12 col-md-6">
             <img src="../../../assets/images/img-sec-5.png" alt="">
@@ -222,12 +223,8 @@
               forma mais didática!</p>
           </div>
         </div>
-      </ng-template>
+      </div>
     </swiper>
-    <div class="navigation">
-      <div #welcomeNavPrev class="swiper-button-prev"></div>
-      <div #welcomeNavNext class="swiper-button-next"></div>
-    </div>
   </div>
   <img class="circle" src="../../../assets/images/Mask Group.png" alt="">
 </section>

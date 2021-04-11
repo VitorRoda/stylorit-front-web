@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import Swal from 'sweetalert2'
-import SwiperCore from 'swiper/core';
 import { ApiClient } from '../../service/api';
-import { Pagination } from 'swiper/core';
-
 
 import $ from "jquery";
 
