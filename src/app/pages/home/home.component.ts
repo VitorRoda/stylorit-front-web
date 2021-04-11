@@ -3,6 +3,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import Swal from 'sweetalert2'
 import SwiperCore from 'swiper/core';
 import { ApiClient } from '../../service/api';
+import { Pagination } from 'swiper/core';
+
+
 import $ from "jquery";
 
 @Component({
@@ -46,30 +49,7 @@ export class HomeComponent implements OnInit {
 
     this.sendEmail(this.dynamicForm.value)
 
-  }
-  public sendEmail(data) {
-
-    // fetch('http://localhost:8000/send-email', {
-    //   method: 'post',
-    //   body: data,
-    // 	headers: { "Content-type": "application/json;charset=utf-8" }
-    // }).then(function (response) {
-    //   debugger
-    //   return response.blob();
-    // }).then(function (myBlob) {
-    //   debugger
-    // });
-
-    // let res = this.apiClient.postEmail<void>(data);
-    $.ajax({
-      type: 'POST',
-      url: 'http://localhost:8000/send-email',
-      data: data,
-      success: function (data) {
-      },
-      error: function (data) {
-      }
-    });
+    this.dynamicForm.reset()
 
     Swal.fire({
       title: 'E-mail enviado',
@@ -78,6 +58,28 @@ export class HomeComponent implements OnInit {
       confirmButtonText: 'OK',
       confirmButtonColor: '#1FA6CD'
     })
+  }
 
+  
+
+  public sendEmail(data) {
+    
+    // $.ajax({
+    //   type: 'POST',
+    //   url: 'http://localhost:8000/send-email',
+    //   data: data,
+    //   success: function (data) {
+    //   },
+    //   error: function (data) {
+    //   }
+    // });
+  }
+
+  scroll(section) {
+    let top = $("#" + section).offset().top - 85
+    window.scrollTo({
+      top: top,
+      behavior: 'smooth'
+    })
   }
 }

@@ -7,18 +7,18 @@
       <div class="col-md-5 col-12">
         <h2>Uma nova experiência ao seu negócio</h2>
         <h1>Transforme sua ideia em realidade!</h1>
-        <button class="only-web">Transformar</button>
+        <button (click)="scroll('contact')" class="only-web">Transformar</button>
       </div>
       <div class="col-md-6 col-12">
         <img src="../../../assets/images/home-img-1.png" alt="">
       </div>
     </div>
     <div class="bot-mobile only-mobile">
-      <button>Transformar</button>
+      <button (click)="scroll('contact')">Transformar</button>
     </div>
     <div class="only-web bot">
       <a target="_blank"
-        href="https://wa.me/5533988919428?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20suas%20anima%C3%A7%C3%B5es%20%3A%29"><i
+        href="https://wa.me/5533991178509?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20suas%20anima%C3%A7%C3%B5es%20%3A%29"><i
           class="fab fa-whatsapp"></i> Fale com a gente!</a>
     </div>
   </div>
@@ -165,61 +165,69 @@
       </div> -->
     </div>
 
-      <swiper [config]="{ slidesPerView: 1, pagination: { el: apresentationPagination } }">
-        <ng-template swiperSlide>
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <img src="../../../assets/images/img-sec-5.png" alt="">
-            </div>
-            <div class="col-12 col-md-6">
-              <h4>Animação padrão sem personagem</h4>
-              <p>Por fim, desenvolvemos e entregamos para você o produto final: a animação com efeitos sonos, narração ou
-                quaisquer adições que você quiser.</p>
-            </div>
+    <swiper [config]="{ 
+      slidesPerView: 1, 
+      navigation: { 
+        nextEl: welcomeNavNext, 
+        prevEl: welcomeNavPrev, 
+        allowTouchMove: false 
+      }}">
+      <ng-template swiperSlide>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <img src="../../../assets/images/img-sec-5.png" alt="">
           </div>
-        </ng-template>
-        <ng-template swiperSlide>
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <img src="../../../assets/images/img-sec-5.png" alt="">
-            </div>
-            <div class="col-12 col-md-6">
-              <h4>Animação padrão com personagem</h4>
-              <p>Criaremos um vídeo para o seu negócio utilizando do nosso banco de ilustrações
-                exclusivo à sua escolha, esse estilo vídeo é ideal para quando você quer cativar o
-                seu cliente com as interações entre os personagens!</p>
-            </div>
+          <div class="col-12 col-md-6">
+            <h4>Animação padrão sem personagem</h4>
+            <p>Por fim, desenvolvemos e entregamos para você o produto final: a animação com efeitos sonos, narração ou
+              quaisquer adições que você quiser.</p>
           </div>
-        </ng-template>
-        <ng-template swiperSlide>
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <img src="../../../assets/images/img-sec-5.png" alt="">
-            </div>
-            <div class="col-12 col-md-6">
-              <h4>Animação customizada</h4>
-              <p>A nossa equipe irá desenvolver do zero todos os elementos que irão compor o seu
-                vídeo, para dar ainda mais personalidade e conseguir repassar a sua ideia de uma
-                maneira ainda mais exclusiva!</p>
-            </div>
+        </div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <img src="../../../assets/images/img-sec-5.png" alt="">
           </div>
-        </ng-template>
-        <ng-template swiperSlide>
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <img src="../../../assets/images/img-sec-5.png" alt="">
-            </div>
-            <div class="col-12 col-md-6">
-              <h4>Quadro branco</h4>
-              <p>Esse estilo de vídeo é uma excelente forma de manter a atenção do público, iremos
-                simular as ilustrações serem criadas ao vivo e vamos passar a sua ideia de uma
-                forma mais didática!</p>
-            </div>
+          <div class="col-12 col-md-6">
+            <h4>Animação padrão com personagem</h4>
+            <p>Criaremos um vídeo para o seu negócio utilizando do nosso banco de ilustrações
+              exclusivo à sua escolha, esse estilo vídeo é ideal para quando você quer cativar o
+              seu cliente com as interações entre os personagens!</p>
           </div>
-        </ng-template>
-      </swiper>
-
-      <div #apresentationPagination class="swiper-pagination"></div>
+        </div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <img src="../../../assets/images/img-sec-5.png" alt="">
+          </div>
+          <div class="col-12 col-md-6">
+            <h4>Animação customizada</h4>
+            <p>A nossa equipe irá desenvolver do zero todos os elementos que irão compor o seu
+              vídeo, para dar ainda mais personalidade e conseguir repassar a sua ideia de uma
+              maneira ainda mais exclusiva!</p>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <img src="../../../assets/images/img-sec-5.png" alt="">
+          </div>
+          <div class="col-12 col-md-6">
+            <h4>Quadro branco</h4>
+            <p>Esse estilo de vídeo é uma excelente forma de manter a atenção do público, iremos
+              simular as ilustrações serem criadas ao vivo e vamos passar a sua ideia de uma
+              forma mais didática!</p>
+          </div>
+        </div>
+      </ng-template>
+    </swiper>
+    <div class="navigation">
+      <div #welcomeNavPrev class="swiper-button-prev"></div>
+      <div #welcomeNavNext class="swiper-button-next"></div>
+    </div>
   </div>
   <img class="circle" src="../../../assets/images/Mask Group.png" alt="">
 </section>
@@ -263,4 +271,3 @@
     </div>
   </div>
 </section>
-
