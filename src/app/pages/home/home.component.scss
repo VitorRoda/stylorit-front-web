@@ -297,7 +297,7 @@ span {
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+      z-index: 1;
       button {
         background: none;
         border: none;
@@ -309,6 +309,20 @@ span {
 
       .swiper-button-disabled{
         opacity: 0.5;
+      }
+    }
+
+
+    .row-img{
+      display: flex;
+      margin-bottom: 15px;
+      img{
+        height: 20px;
+        width: 20px;
+        opacity: 0.5;
+      }
+      .show{
+        opacity: 1;
       }
     }
   }
