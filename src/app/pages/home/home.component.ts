@@ -57,10 +57,10 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  
+
 
   public sendEmail(data) {
-    
+
     // $.ajax({
     //   type: 'POST',
     //   url: 'http://localhost:8000/send-email',
@@ -79,4 +79,5 @@ export class HomeComponent implements OnInit {
       behavior: 'smooth'
     })
   }
+
 }
